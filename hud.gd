@@ -26,6 +26,9 @@ func show_game_over():
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
+	
+func update_high_score(high_score):
+	$HighScore.text = str(high_score)
 
 
 func _on_message_timer_timeout() -> void:
