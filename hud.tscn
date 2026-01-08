@@ -1,7 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://3nwxu8xojqtw"]
+[gd_scene load_steps=7 format=3 uid="uid://3nwxu8xojqtw"]
 
 [ext_resource type="FontFile" uid="uid://b7pbbfmkx2ifl" path="res://fonts/Xolonium-Regular.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://6soq5advhwyi" path="res://hud.gd" id="1_64ctp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
+bg_color = Color(0.7747909, 0.5182476, 0.56867695, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ctp"]
+bg_color = Color(0.8445953, 0.43180555, 0.7172919, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_640wx"]
+bg_color = Color(0.23567641, 0.611817, 0.99057657, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="Theme" id="Theme_64ctp"]
+Button/colors/font_color = Color(0.29297048, 0.99999994, 0.88360405, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_8sq4i")
+Button/styles/normal = SubResource("StyleBoxFlat_64ctp")
+Button/styles/pressed = SubResource("StyleBoxFlat_640wx")
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_64ctp")
@@ -14,6 +41,7 @@ offset_left = -22.5
 offset_right = 22.5
 offset_bottom = 78.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 64
 text = "0"
@@ -27,14 +55,15 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -240.0
-offset_top = -120.0
+offset_top = -310.0
 offset_right = 240.0
-offset_bottom = 120.0
+offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_37p78")
-theme_override_font_sizes/font_size = 64
-text = "Dodge the Creeps! "
+theme_override_font_sizes/font_size = 50
+text = "Survive Pookstein Island"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -51,6 +80,7 @@ offset_right = 100.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_64ctp")
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 64
 text = "Start"
