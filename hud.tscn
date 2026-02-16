@@ -1,73 +1,65 @@
-[gd_scene load_steps=7 format=3 uid="uid://3nwxu8xojqtw"]
+[gd_scene format=3 uid="uid://3nwxu8xojqtw"]
 
 [ext_resource type="FontFile" uid="uid://b7pbbfmkx2ifl" path="res://fonts/Xolonium-Regular.ttf" id="1_37p78"]
 [ext_resource type="Script" uid="uid://6soq5advhwyi" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="StyleBox" uid="uid://jx5xrctsp6a0" path="res://PanelBox.tres" id="2_640wx"]
+[ext_resource type="Theme" uid="uid://d37i84pqtsvs6" path="res://ButtonTheme.res" id="3_8sq4i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sq4i"]
-bg_color = Color(0.7747909, 0.5182476, 0.56867695, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64ctp"]
-bg_color = Color(0.8445953, 0.43180555, 0.7172919, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_640wx"]
-bg_color = Color(0.23567641, 0.611817, 0.99057657, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="Theme" id="Theme_64ctp"]
-Button/colors/font_color = Color(0.29297048, 0.99999994, 0.88360405, 1)
-Button/styles/hover = SubResource("StyleBoxFlat_8sq4i")
-Button/styles/normal = SubResource("StyleBoxFlat_64ctp")
-Button/styles/pressed = SubResource("StyleBoxFlat_640wx")
-
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=1629999389]
 script = ExtResource("1_64ctp")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="HighScore" type="Label" parent="." unique_id=1635453201]
+offset_right = 34.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 48
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=2127398810]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -45.0
-offset_bottom = 78.0
+offset_left = -34.0
+offset_bottom = 119.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_37p78")
 theme_override_font_sizes/font_size = 48
 text = "0"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="HighScore" type="Label" parent="."]
-offset_right = 45.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_37p78")
-theme_override_font_sizes/font_size = 48
-text = "-
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2034444635]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -296.0
+offset_right = 296.0
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
 
-[node name="Message" type="Label" parent="."]
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1671134006]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_640wx")
+
+[node name="Message" type="Label" parent="MarginContainer/Panel" unique_id=785917954]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -240.0
-offset_top = -310.0
+offset_top = -120.0
 offset_right = 240.0
-offset_bottom = -70.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -78,7 +70,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="." unique_id=1126989258]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -90,12 +82,11 @@ offset_right = 100.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_64ctp")
-theme_override_fonts/font = ExtResource("1_37p78")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_8sq4i")
+theme_type_variation = &"FlatButton"
 text = "Start"
 
-[node name="MessageTimer" type="Timer" parent="."]
+[node name="MessageTimer" type="Timer" parent="." unique_id=759890719]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

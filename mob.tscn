@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnfwm64vggfnf"]
+[gd_scene format=3 uid="uid://bnfwm64vggfnf"]
 
 [ext_resource type="Script" uid="uid://dyti2hreuee5j" path="res://mob.gd" id="1_1qmh0"]
 [ext_resource type="Texture2D" uid="uid://b1v6k4sej2tfs" path="res://PookieTown/beavr.jpg" id="2_7ulmv"]
@@ -99,21 +99,21 @@ animations = [{
 radius = 32.0
 height = 68.0
 
-[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+[node name="Mob" type="RigidBody2D" unique_id=976484611 groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_1qmh0")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=963330647]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_pcqmr")
 animation = &"Zeekoo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1896166556]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_b3mxk")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=881223334]
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

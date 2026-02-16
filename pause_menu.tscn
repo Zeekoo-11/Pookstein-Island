@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://crnl8ix0bam4a" path="res://volume_slider.tscn" id="1_hdmo1"]
 [ext_resource type="Script" uid="uid://ciapp35eebm51" path="res://pause_menu.gd" id="1_nwcfo"]
+[ext_resource type="StyleBox" uid="uid://jx5xrctsp6a0" path="res://PanelBox.tres" id="2_2nc7s"]
+[ext_resource type="Theme" uid="uid://cki8dygiuv6y6" path="res://Resume.tres" id="2_p81d2"]
+[ext_resource type="FontFile" uid="uid://b7pbbfmkx2ifl" path="res://fonts/Xolonium-Regular.ttf" id="3_p81d2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
-bg_color = Color(0.3005518, 0.24674019, 0.2612763, 1)
+[sub_resource type="Theme" id="Theme_p81d2"]
 
 [node name="PauseMenu" type="Control" unique_id=1809595099]
 layout_mode = 3
@@ -35,7 +37,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="Panel" type="Panel" parent="MarginContainer" unique_id=1083897741]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_hdmo1")
+theme_override_styles/panel = ExtResource("2_2nc7s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=10515371]
 layout_mode = 2
@@ -49,6 +51,8 @@ theme_override_constants/margin_right = 15
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1663247259]
 layout_mode = 2
+theme = ExtResource("2_p81d2")
+theme_override_fonts/font = ExtResource("3_p81d2")
 text = "Resume"
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1632393959]
@@ -58,6 +62,8 @@ theme_override_constants/margin_right = 15
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=1816824348]
 layout_mode = 2
+theme = ExtResource("2_p81d2")
+theme_override_fonts/font = ExtResource("3_p81d2")
 text = "Quit"
 
 [node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=250444665]
@@ -72,24 +78,29 @@ layout_mode = 2
 
 [node name="Music_Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer4/VBoxContainer" unique_id=1570773937]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.29411766, 1, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("3_p81d2")
 text = "Music"
 horizontal_alignment = 1
 
 [node name="Music" parent="MarginContainer/VBoxContainer/MarginContainer4/VBoxContainer" unique_id=471714494 instance=ExtResource("1_hdmo1")]
 layout_mode = 2
+theme = SubResource("Theme_p81d2")
 bus_name = "Music"
 
 [node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=596758313]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer3" unique_id=1436952717]
 layout_mode = 2
 
 [node name="SFX_Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer" unique_id=866407027]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.29411766, 1, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("3_p81d2")
 text = "SFX"
 horizontal_alignment = 1
 

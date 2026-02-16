@@ -69,6 +69,8 @@ func _on_mob_timer_timeout() -> void:
 		$MobTimer.wait_time = 0.3
 	elif score == 25:
 		$MobTimer.wait_time = 0.25
+	elif score == 35:
+		$MobTimer.wait_time = 0.2
 
 
 func _on_score_timer_timeout() -> void:
