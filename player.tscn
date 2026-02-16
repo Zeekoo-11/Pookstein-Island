@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bghl31ub68eaw"]
+[gd_scene format=3 uid="uid://bghl31ub68eaw"]
 
 [ext_resource type="Script" uid="uid://qog1lsuvl7os" path="res://player.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://bdbk585jbn1n0" path="res://PookieTown/usagi.webp" id="2_onrkg"]
@@ -26,17 +26,17 @@ animations = [{
 radius = 22.0
 height = 52.0
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" unique_id=799928227]
 script = ExtResource("1_sweqy")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1467105296]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"walk"
 autoplay = "up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734081149]
 shape = SubResource("CapsuleShape2D_b26j0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

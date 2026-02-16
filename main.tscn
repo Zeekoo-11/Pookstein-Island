@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqi7cmg72qm03"]
+[gd_scene format=3 uid="uid://dqi7cmg72qm03"]
 
 [ext_resource type="Script" uid="uid://0xvvu0bdr4xt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bghl31ub68eaw" path="res://player.tscn" id="1_ig7tw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3nwxu8xojqtw" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://brp5i6smk6yuf" path="res://PookieTown/FIFTY_FIFTY_-_Pookie_(mp3.pm).mp3" id="6_7mycd"]
 [ext_resource type="AudioStream" uid="uid://w6hqg06txgr3" path="res://art/gameover.wav" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://dy4v2n8c4ua75" path="res://pause_menu.tscn" id="8_5vw27"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
@@ -14,47 +15,52 @@ _data = {
 }
 point_count = 5
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1375502419]
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_h2yge")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1672571921]
 offset_left = -200.0
 offset_right = 600.0
 offset_bottom = 720.0
 texture = ExtResource("3_lquwl")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." unique_id=1349524595 instance=ExtResource("1_ig7tw")]
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="MobTimer" type="Timer" parent="." unique_id=862120790]
 wait_time = 0.5
 
-[node name="ScoreTimer" type="Timer" parent="."]
+[node name="ScoreTimer" type="Timer" parent="." unique_id=654260531]
 
-[node name="StartTimer" type="Timer" parent="."]
+[node name="StartTimer" type="Timer" parent="." unique_id=91157020]
 wait_time = 2.0
 one_shot = true
 
-[node name="StartPosition" type="Marker2D" parent="."]
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1456815254]
 position = Vector2(240, 450)
 
-[node name="MobPath" type="Path2D" parent="."]
+[node name="MobPath" type="Path2D" parent="." unique_id=1710000026]
 curve = SubResource("Curve2D_ig7tw")
 
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath" unique_id=1265878676]
 
-[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+[node name="HUD" parent="." unique_id=545837634 instance=ExtResource("4_1bvp3")]
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1366058968]
 stream = ExtResource("6_7mycd")
 volume_db = -10.495
+bus = &"Music"
 parameters/looping = true
 
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1780156427]
 stream = ExtResource("7_272bh")
+bus = &"SFX"
 
-[connection signal="hit" from="Player" to="." method="game_over"]
+[node name="PauseMenu" parent="." unique_id=1809595099 instance=ExtResource("8_5vw27")]
+visible = false
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

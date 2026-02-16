@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dy4v2n8c4ua75"]
+
+[ext_resource type="PackedScene" uid="uid://crnl8ix0bam4a" path="res://volume_slider.tscn" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://ciapp35eebm51" path="res://pause_menu.gd" id="1_nwcfo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0.3005518, 0.24674019, 0.2612763, 1)
+
+[node name="PauseMenu" type="Control" unique_id=1809595099]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nwcfo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=243911115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -56.5
+offset_right = 176.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1083897741]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdmo1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=10515371]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=626029595]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+
+[node name="Resume" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1663247259]
+layout_mode = 2
+text = "Resume"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1632393959]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2" unique_id=1816824348]
+layout_mode = 2
+text = "Quit"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=250444665]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer4" unique_id=897410513]
+layout_mode = 2
+
+[node name="Music_Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer4/VBoxContainer" unique_id=1570773937]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Music" parent="MarginContainer/VBoxContainer/MarginContainer4/VBoxContainer" unique_id=471714494 instance=ExtResource("1_hdmo1")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=596758313]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer3" unique_id=1436952717]
+layout_mode = 2
+
+[node name="SFX_Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer" unique_id=866407027]
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="SFX" parent="MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer" unique_id=1767884736 instance=ExtResource("1_hdmo1")]
+layout_mode = 2
+bus_name = "SFX"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer2/Quit" to="." method="_on_quit_pressed"]
