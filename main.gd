@@ -15,7 +15,6 @@ func _ready() -> void:
 	$HUD.update_high_score(high_score)
 	$Music.play()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
@@ -72,6 +71,8 @@ func _on_mob_timer_timeout() -> void:
 	elif score == 35:
 		$MobTimer.wait_time = 0.2
 
+func change_theme(pookie_theme):
+	$TextureRect.texture = ResourceLoader.load(pookie_theme)
 
 func _on_score_timer_timeout() -> void:
 	score += 1
