@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bnfwm64vggfnf"]
 
 [ext_resource type="Script" uid="uid://dyti2hreuee5j" path="res://mob.gd" id="1_1qmh0"]
-[ext_resource type="Texture2D" uid="uid://b1v6k4sej2tfs" path="res://PookieTown/beavr.jpg" id="2_7ulmv"]
-[ext_resource type="Texture2D" uid="uid://sld0hypn8qcv" path="res://PookieTown/Estelle.jpg" id="3_pcqmr"]
-[ext_resource type="Texture2D" uid="uid://b6gqqola2hxuh" path="res://PookieTown/fidel.jpg" id="4_jbnni"]
-[ext_resource type="Texture2D" uid="uid://bjwmukhnhtv6o" path="res://PookieTown/kevin.jpg" id="5_yscv0"]
-[ext_resource type="Texture2D" uid="uid://gbgxdgth3b83" path="res://PookieTown/Leo.jpg" id="6_eqsov"]
-[ext_resource type="Texture2D" uid="uid://bybmetswamb0i" path="res://PookieTown/Desmond.jpg" id="7_wvrms"]
-[ext_resource type="Texture2D" uid="uid://dlk8kcc4yrjwb" path="res://PookieTown/Oscar.jpg" id="8_h0ign"]
-[ext_resource type="Texture2D" uid="uid://braobihfippb5" path="res://PookieTown/Caitlin.jpg" id="9_6ak38"]
-[ext_resource type="Texture2D" uid="uid://dvvt3xkpjc63q" path="res://PookieTown/Yvonne.jpg" id="10_rxhkm"]
-[ext_resource type="Texture2D" uid="uid://cp6gvdd6d2oah" path="res://PookieTown/zeekoo.jpg" id="11_mhy1y"]
+[ext_resource type="Texture2D" uid="uid://u6dx4h3fj10h" path="res://PookieTown/new icons/michael.png" id="2_7ulmv"]
+[ext_resource type="Texture2D" uid="uid://bac6o7vl6g4sr" path="res://PookieTown/new icons/estelle.png" id="3_pcqmr"]
+[ext_resource type="Texture2D" uid="uid://ivbt0hq1futj" path="res://PookieTown/new icons/fidel.png" id="4_jbnni"]
+[ext_resource type="Texture2D" uid="uid://dtnfmdmpj6yvn" path="res://PookieTown/new icons/kevin.png" id="5_yscv0"]
+[ext_resource type="Texture2D" uid="uid://c4aulhrvmcdy" path="res://PookieTown/new icons/leo.png" id="6_eqsov"]
+[ext_resource type="Texture2D" uid="uid://dysv2qhk2tdfc" path="res://PookieTown/new icons/desmond.png" id="7_wvrms"]
+[ext_resource type="Texture2D" uid="uid://cmdyod85d82xp" path="res://PookieTown/new icons/oscar.png" id="8_h0ign"]
+[ext_resource type="Texture2D" uid="uid://baf0311c0y7fx" path="res://PookieTown/new icons/caitlin.png" id="9_6ak38"]
+[ext_resource type="Texture2D" uid="uid://bloic488r0v1d" path="res://PookieTown/new icons/yvonne.png" id="10_rxhkm"]
+[ext_resource type="Texture2D" uid="uid://dk7ihw7mt32vj" path="res://PookieTown/new icons/zeekoo.png" id="11_mhy1y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcqmr"]
 animations = [{
@@ -106,9 +106,9 @@ script = ExtResource("1_1qmh0")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=963330647]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_pcqmr")
-animation = &"Zeekoo"
+animation = &"Beavr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1896166556]
 rotation = 1.5707964
