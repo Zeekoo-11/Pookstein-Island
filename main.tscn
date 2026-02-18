@@ -32,7 +32,7 @@ visible = false
 [node name="Player" parent="." unique_id=1349524595 instance=ExtResource("1_ig7tw")]
 
 [node name="MobTimer" type="Timer" parent="." unique_id=862120790]
-wait_time = 0.5
+wait_time = 0.4
 
 [node name="ScoreTimer" type="Timer" parent="." unique_id=654260531]
 

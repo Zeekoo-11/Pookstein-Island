@@ -7,6 +7,7 @@ var high_score = 0
 
 @onready var pause_menu = $PauseMenu
 var paused = false
+var difficulty_option: String = "normal"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -75,6 +76,7 @@ func change_theme(pookie_theme):
 	$TextureRect.texture = ResourceLoader.load(pookie_theme)
 	
 func change_difficulty(difficulty):
+	difficulty_option = difficulty
 	if difficulty == "easy":
 		$MobTimer.wait_time = 0.4
 	elif difficulty == "normal":

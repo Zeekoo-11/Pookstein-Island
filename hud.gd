@@ -31,7 +31,8 @@ func update_score(score):
 func update_high_score(high_score):
 	$HighScore.text = str(high_score)
 	
-
+func update_difficulty(difficulty):
+	$Difficulty.text = difficulty
 
 func _on_message_timer_timeout() -> void:
 	$MarginContainer.hide()

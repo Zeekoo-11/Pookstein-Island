@@ -6,6 +6,7 @@ var pookie_theme: String
 var pookie_theme_old: String = "res://PookieTown/PookieTown.webp"
 var pookie_theme_new: String = "res://PookieTown/pookieTowngenerated.png"
 var theme_switched = false
+var difficulty: String
 
 func _on_resume_pressed() -> void:
 	main.pauseMenu()
@@ -27,10 +28,17 @@ func _on_change_theme_pressed() -> void:
 		theme_switched = true
 
 func _on_easy_button_pressed() -> void:
+	difficulty = "easy"
+	$"../HUD".update_difficulty(difficulty)
 	main.change_difficulty("easy")
 
 func _on_normal_button_pressed() -> void:
+	difficulty = "normal"
+	$"../HUD".update_difficulty(difficulty)
 	main.change_difficulty("normal")
 
 func _on_hard_button_pressed() -> void:
+	difficulty = "hard"
+	$"../HUD".update_difficulty(difficulty)
 	main.change_difficulty("hard")
+	
