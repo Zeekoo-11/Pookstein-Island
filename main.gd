@@ -60,19 +60,28 @@ func _on_mob_timer_timeout() -> void:
 	var velocity = Vector2(randf_range(200.0, 350.0), 0)
 	mob.linear_velocity = velocity.rotated(direction)
 	add_child(mob)
-	if score == 10:
-		$MobTimer.wait_time = 0.4
-	elif score == 15:
-		$MobTimer.wait_time = 0.35
-	elif score == 20:
-		$MobTimer.wait_time = 0.3
-	elif score == 25:
-		$MobTimer.wait_time = 0.25
-	elif score == 35:
-		$MobTimer.wait_time = 0.2
+	#if score == 10:
+		#$MobTimer.wait_time = 0.4
+	#elif score == 15:
+		#$MobTimer.wait_time = 0.35
+	#elif score == 20:
+		#$MobTimer.wait_time = 0.3
+	#elif score == 25:
+		#$MobTimer.wait_time = 0.25
+	#elif score == 35:
+		#$MobTimer.wait_time = 0.2
 
 func change_theme(pookie_theme):
 	$TextureRect.texture = ResourceLoader.load(pookie_theme)
+	
+func change_difficulty(difficulty):
+	if difficulty == "easy":
+		$MobTimer.wait_time = 0.4
+	elif difficulty == "normal":
+		$MobTimer.wait_time = 0.3
+	elif difficulty == "hard":
+		$MobTimer.wait_time = 0.2
+	print(difficulty)
 
 func _on_score_timer_timeout() -> void:
 	score += 1

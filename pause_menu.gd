@@ -25,3 +25,12 @@ func _on_change_theme_pressed() -> void:
 		pookie_theme = pookie_theme_old
 		main.change_theme(pookie_theme)
 		theme_switched = true
+
+func _on_easy_button_pressed() -> void:
+	main.change_difficulty("easy")
+
+func _on_normal_button_pressed() -> void:
+	main.change_difficulty("normal")
+
+func _on_hard_button_pressed() -> void:
+	main.change_difficulty("hard")
