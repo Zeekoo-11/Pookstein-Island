@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://rt5qmutx3gud" path="res://PookieTown/pookieTowngenerated.png" id="3_5vw27"]
 [ext_resource type="PackedScene" uid="uid://3nwxu8xojqtw" path="res://hud.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://brp5i6smk6yuf" path="res://PookieTown/FIFTY_FIFTY_-_Pookie_(mp3.pm).mp3" id="6_7mycd"]
-[ext_resource type="AudioStream" uid="uid://w6hqg06txgr3" path="res://art/gameover.wav" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://dy4v2n8c4ua75" path="res://pause_menu.tscn" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://bxiek8ff1hgv3" path="res://PookieTown/jixaw-metal-pipe-falling-sound.mp3" id="8_kek77"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
@@ -57,7 +57,8 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1780156427]
-stream = ExtResource("7_272bh")
+stream = ExtResource("8_kek77")
+volume_db = -19.429
 bus = &"SFX"
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
